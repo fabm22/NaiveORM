@@ -1,0 +1,2 @@
+This is a dir only for a few tests, not directly part of the NaiveORM
+yet I left it in it. Doesn't belong to the original tutorial neither.
