@@ -50,7 +50,9 @@ namespace NaiveORM
     {
         ID = 0,
         Reference,
-        Map
+        Map,
+        ManyToOne,
+        ManyToMany
     }
 
     //class AttributeType //to check later..
