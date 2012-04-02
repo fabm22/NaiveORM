@@ -9,6 +9,7 @@ namespace NaiveORM
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("GTFO!");
         }
     }
 }

@@ -9,15 +9,14 @@ namespace NaiveORM
     /*
      * entre autres, on va implémenter les OneToMany, ManyToOne, OneToOne etc.
      */
-    partial class ClassMapping<T> : IClassMap<T>, IAttributeMap
+    partial class ClassMapping<T> : IClassMap<T>, IAttributeMap     //partial
     {
         public void AddAttribute(Attribute _Property, Expression<Func<T, object>> expression)
         {
             string[] _SplitName=null;
             if (expression.Body.NodeType == ExpressionType.Convert)
             {
-                _Property.Name = expression.Body.ToString()
-                        .Replace("Convert(", "").Replace(")", "");
+                _Property.Name = expression.Body.ToString().Replace("Convert(", "").Replace(")", "");
                 string[] _Splitter = { "." };
                 _SplitName = _Property.Name.Split(_Splitter, StringSplitOptions.None);
                 _Property.Name = _SplitName[_SplitName.Length - 1]; //last?
@@ -50,7 +49,7 @@ namespace NaiveORM
             AddAttribute(_ID, expression);
         }
 
-    // Mapping
+        // Mapping
         public void Map(Expression<Func<T,object>> expression,
             string _MappedProperty, bool _Cascade)
         {
